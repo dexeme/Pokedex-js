@@ -37,6 +37,16 @@ main {
 
 }
 
+.pokemon__image__602 {
+    position: absolute;
+    bottom: 27%;
+    left: 25%;
+    transform: translate(-30%, 10%);
+    height: 9%;    
+
+
+}
+
 .pokemon__data {
     position: absolute;
     font-weight: 600;
@@ -101,4 +111,12 @@ main {
 .button:active {
     box-shadow: inset -4px 4px 0 #222;
     font-size: 0.9rem;
+}
+
+#types {
+    width: 20px;
+}
+
+.type_image {
+    padding: 20px;
 }

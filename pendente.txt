@@ -11,8 +11,8 @@
     > Ao ser pressionado, troca o caminho ['front_default']
     > por ['front_shiny']
 
-
     Corrigir erros:
 
     1 // Quando Not Found -> Limpar barra de pesquisa ao invés de manter o Input
-    
+    2 // Pokémon 602 maior que o normal
+
