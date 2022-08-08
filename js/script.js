@@ -32,9 +32,6 @@ const renderPokemon = async (pokemon) => {
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'];
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'];  
 
-
-
-
     input.value = '';
     searchPokemon = data.id;
   } else {

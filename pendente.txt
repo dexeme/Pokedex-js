@@ -1,7 +1,5 @@
-  
-  
-  
-    ### Implementar 2 botões
+
+ ### Implementar 2 botões
 
     Primeiro botão, pokémon macho/fêmea
     > Quando macho, exibir o front_default
@@ -17,3 +15,4 @@
     Corrigir erros:
 
     1 // Quando Not Found -> Limpar barra de pesquisa ao invés de manter o Input
+    
