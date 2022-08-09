@@ -53,7 +53,7 @@ const renderPokemon = async (pokemon) => {
     pokemonName.textContent = data.name;
     pokemonNumber.textContent = data.id;
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated'][Shiny];
-    divInnerHTML = '';
+    typeContainer.innerHTML = '';
     data['types'].forEach((item, index) => {
       tipo = item['type']['name'];        
       let imageUrls = {
@@ -77,9 +77,11 @@ const renderPokemon = async (pokemon) => {
         steel: 'https://cdn.discordapp.com/attachments/905594842619469854/1006526676714410074/ghost.png', 
       }
       let imageUrl = imageUrls[tipo];
-      divInnerHTML += `<img class="type_image" src="${imageUrl}"/>`;
+      img = document.createElement('img');
+      img.classList.add('type_image');
+      img.src = imageUrl;
+      typeContainer.appendChild(img);
     });
-    typeContainer.innerHTML = divInnerHTML;
     
 
     searchPokemon = data.id;
