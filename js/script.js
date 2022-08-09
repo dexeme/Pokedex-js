@@ -152,3 +152,12 @@ buttonNext.addEventListener('click', () => {
 });
 
 renderPokemon(searchPokemon);
+
+
+
+buttonNext.onclick = function() {
+  var audio = new Audio("soundfile.wav");
+  audio.play();
+}
+
+

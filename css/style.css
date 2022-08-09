@@ -33,7 +33,9 @@ main {
     bottom: 55%;
     left: 50.5%;
     transform: translate(-63%, 20%);
-    height: 18%;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
 
 }
 
@@ -105,15 +107,22 @@ main {
 
 #types {
     position: absolute;
+    align-items: center;
     bottom: 0.090%;
-    left: 21%;
-    width: 0%;
+    left: 0%;
+    width: 90%;
     transform: scale(0.3,0.3);
     display: flex;
-    gap: 135px;
+    gap: 105px;
+    justify-content: center;
+
+
 };
 
 .type_image {
-    position: absolute;    
+    position: relative;
+    display: flex; 
+    object-position: 50% 50%
+    
 };
 
