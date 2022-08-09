@@ -31,19 +31,9 @@ main {
 .pokemon__image {
     position: absolute;
     bottom: 55%;
-    left: 50%;
+    left: 50.5%;
     transform: translate(-63%, 20%);
     height: 18%;
-
-}
-
-.pokemon__image__602 {
-    position: absolute;
-    bottom: 27%;
-    left: 25%;
-    transform: translate(-30%, 10%);
-    height: 9%;    
-
 
 }
 
@@ -114,9 +104,16 @@ main {
 }
 
 #types {
-    width: 20px;
-}
+    position: absolute;
+    bottom: 0.090%;
+    left: 30%;
+    width: 2%;
+    transform: scale(0.17,0.17);
+    display: flex;
+    gap: 135px;
+};
 
 .type_image {
-    padding: 20px;
-}
+    position: absolute;    
+};
+

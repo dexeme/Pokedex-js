@@ -58,10 +58,11 @@ const renderPokemon = async (pokemon) => {
       tipo = item['type']['name'];
       let imageUrl;
       switch (tipo) {
-        case 'electric':
-          imageUrl = '';
-        case 'electric':
-          imageUrl = '';
+        case 'grass':
+          imageUrl = 'https://cdn.discordapp.com/attachments/920027249279922256/1006357455523037265/folha_teste_bosta_testetamahnp1.png';
+        break;
+        case 'poison':
+          imageUrl = 'https://th.bing.com/th/id/R.13e886cdfdf0af564d4f1b3c6875faa7?rik=rGWBDNUHsLwUSQ&riu=http%3a%2f%2fpixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com%2fimage%2f27faf2f6fee9b5a.png&ehk=hG7YkFH2w%2fDZtqXf1ySZ9copdTHxZR15x1dwj8POBmY%3d&risl=&pid=ImgRaw&r=0';
         break;
       }
       divInnerHTML += `<img class="type_image" src="${imageUrl}"/>`;
