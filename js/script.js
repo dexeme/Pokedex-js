@@ -41,8 +41,8 @@ const fetchPokemon = async (pokemon) => {
 
 const renderPokemon = async (pokemon) => {
 
-  pokemonName.innerHTML = 'Loading...';
-  pokemonNumber.innerHTML = '';
+  pokemonName.textContent = 'Loading...';
+  pokemonNumber.textContent = '';
 
   const data = await fetchPokemon(pokemon);
 
@@ -50,8 +50,8 @@ const renderPokemon = async (pokemon) => {
 
   if (data) {
     pokemonImage.style.display = 'block';
-    pokemonName.innerHTML = data.name;
-    pokemonNumber.innerHTML = data.id;
+    pokemonName.textContent = data.name;
+    pokemonNumber.textContent = data.id;
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated'][Shiny];
     divInnerHTML = '';
     data['types'].forEach((item, index) => {
@@ -80,13 +80,13 @@ const renderPokemon = async (pokemon) => {
       divInnerHTML += `<img class="type_image" src="${imageUrl}"/>`;
     });
     typeContainer.innerHTML = divInnerHTML;
-
+    
 
     searchPokemon = data.id;
   } else {
     pokemonImage.style.display = 'none';
-    pokemonName.innerHTML = 'Not found';
-    pokemonNumber.innerHTML = '';
+    pokemonName.textContent = 'Not found';
+    pokemonNumber.textContent = '';
   }
   input.value = '';
 }
