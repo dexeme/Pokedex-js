@@ -106,9 +106,9 @@ main {
 #types {
     position: absolute;
     bottom: 0.090%;
-    left: 30%;
-    width: 2%;
-    transform: scale(0.17,0.17);
+    left: 21%;
+    width: 0%;
+    transform: scale(0.3,0.3);
     display: flex;
     gap: 135px;
 };

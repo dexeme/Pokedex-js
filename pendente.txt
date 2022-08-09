@@ -7,12 +7,11 @@
     // Sprites Fêmea ['front_female'] // Quando 'null', exibir ['front_default']
 
 
-    Segundo botão, pokémon shiny. 
-    > Ao ser pressionado, troca o caminho ['front_default']
-    > por ['front_shiny']
+    Segundo botão, pokémon shiny. (IMPLEMENTADO)
 
     Corrigir erros:
 
-    1 // Quando Not Found -> Limpar barra de pesquisa ao invés de manter o Input
-    2 // Pokémon 602 maior que o normal
-
+    1 // Quando Not Found -> Limpar barra de pesquisa ao invés de manter o Input (RESOLVIDO)
+    2 // Pokémon 602 maior que o normal 
+    3 // Quando pokémon só tem 1 tipo, não aparece centralizado
+   
