@@ -5,6 +5,7 @@ const pokemonType = document.querySelector('.pokemon__type');
 
 
 const form = document.querySelector('.form');
+
 const input = document.querySelector('.input__search');
 const buttonPrev = document.querySelector('.btn-prev');
 const buttonNext = document.querySelector('.btn-next');
@@ -117,7 +118,12 @@ renderPokemon(searchPokemon);
 
 
 buttonNext.onclick = function() {
-  var audio = new Audio("soundfile.wav");
+  var audio = new Audio("next-button-sound.wav");
+  audio.play();
+}
+
+buttonPrev.onclick = function() {
+  var audio = new Audio("mixkit-modern-technology-select-3124.wav");
   audio.play();
 }
 
