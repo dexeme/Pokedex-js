@@ -55,67 +55,28 @@ const renderPokemon = async (pokemon) => {
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated'][Shiny];
     divInnerHTML = '';
     data['types'].forEach((item, index) => {
-      tipo = item['type']['name'];
-      let imageUrl;
-      switch (tipo) {
-        case 'grass':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006524004363939870/ghost.png';
-        break;
-        case 'poison':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006527684010049596/ghost.png';
-        break;
-        case 'water':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006526844985688185/ghost.png';
-        break;
-        case 'fire':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006519390721802310/ghost.png';
-        break;
-        case 'fairy':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006519717768462377/ghost.png';
-        break;
-        case 'flying':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006519156855803925/ghost.png';
-        break;
-        case 'ghost':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006518782107328592/ghost.png';
-        break;
-        case 'electric':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006519920395304960/ghost.png';
-        break;
-        case 'dragon':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006520957848010762/ghost.png';
-        break;
-        case 'dark':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006522402114654218/ghost.png';
-        break;
-        case 'bug':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006523209694322738/ghost.png';
-        break;
-        case 'fight':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006523633914626088/ghost.png';
-        break;
-        case 'ground':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006524320815775865/ghost.png';
-        break;
-        case 'ice':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006524559899492422/ghost.png';
-        break;
-        case 'normal':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006525048573661236/ghost.png';
-        break;
-        case 'psychic':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006525946590941194/ghost.png';
-        break;
-        case 'rock':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006526192914018417/ghost.png';
-        break;
-        case 'steel':
-          imageUrl = 'https://cdn.discordapp.com/attachments/905594842619469854/1006526676714410074/ghost.png';
-        break;
-        
-        
-
+      tipo = item['type']['name'];        
+      let imageUrls = {
+        grass: 'https://cdn.discordapp.com/attachments/905594842619469854/1006524004363939870/ghost.png',
+        poison: 'https://cdn.discordapp.com/attachments/905594842619469854/1006527684010049596/ghost.png',
+        water: 'https://cdn.discordapp.com/attachments/905594842619469854/1006526844985688185/ghost.png',
+        fire: 'https://cdn.discordapp.com/attachments/905594842619469854/1006519390721802310/ghost.png',
+        fairy: 'https://cdn.discordapp.com/attachments/905594842619469854/1006519717768462377/ghost.png',
+        flying: 'https://cdn.discordapp.com/attachments/905594842619469854/1006519156855803925/ghost.png',
+        ghost: 'https://cdn.discordapp.com/attachments/905594842619469854/1006518782107328592/ghost.png',
+        electric: 'https://cdn.discordapp.com/attachments/905594842619469854/1006519920395304960/ghost.png',
+        dragon: 'https://cdn.discordapp.com/attachments/905594842619469854/1006520957848010762/ghost.png',
+        dark: 'https://cdn.discordapp.com/attachments/905594842619469854/1006522402114654218/ghost.png',
+        bug: 'https://cdn.discordapp.com/attachments/905594842619469854/1006523209694322738/ghost.png',
+        fight: 'https://cdn.discordapp.com/attachments/905594842619469854/1006523633914626088/ghost.png',
+        ground: 'https://cdn.discordapp.com/attachments/905594842619469854/1006524320815775865/ghost.png',
+        ice: 'https://cdn.discordapp.com/attachments/905594842619469854/1006524559899492422/ghost.png',
+        normal: 'https://cdn.discordapp.com/attachments/905594842619469854/1006525048573661236/ghost.png',
+        psychic: 'https://cdn.discordapp.com/attachments/905594842619469854/1006525946590941194/ghost.png',
+        rock: 'https://cdn.discordapp.com/attachments/905594842619469854/1006526192914018417/ghost.png',
+        steel: 'https://cdn.discordapp.com/attachments/905594842619469854/1006526676714410074/ghost.png', 
       }
+      let imageUrl = imageUrls[tipo];
       divInnerHTML += `<img class="type_image" src="${imageUrl}"/>`;
     });
     typeContainer.innerHTML = divInnerHTML;
