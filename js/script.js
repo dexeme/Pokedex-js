@@ -42,8 +42,8 @@ const fetchPokemon = async (pokemon) => {
 
 const renderPokemon = async (pokemon) => {
 
-  pokemonName.innerHTML = 'Loading...';
-  pokemonNumber.innerHTML = '';
+  pokemonName.textContent = 'Loading...';
+  pokemonNumber.textContent = '';
 
   const data = await fetchPokemon(pokemon);
 
@@ -51,10 +51,10 @@ const renderPokemon = async (pokemon) => {
 
   if (data) {
     pokemonImage.style.display = 'block';
-    pokemonName.innerHTML = data.name;
-    pokemonNumber.innerHTML = data.id;
+    pokemonName.textContent = data.name;
+    pokemonNumber.textContent = data.id;
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated'][Shiny];
-    divInnerHTML = '';
+    typeContainer.innerHTML = '';
     data['types'].forEach((item, index) => {
       tipo = item['type']['name'];        
       let imageUrls = {
@@ -78,16 +78,18 @@ const renderPokemon = async (pokemon) => {
         steel: 'https://cdn.discordapp.com/attachments/905594842619469854/1006526676714410074/ghost.png', 
       }
       let imageUrl = imageUrls[tipo];
-      divInnerHTML += `<img class="type_image" src="${imageUrl}"/>`;
+      img = document.createElement('img');
+      img.classList.add('type_image');
+      img.src = imageUrl;
+      typeContainer.appendChild(img);
     });
-    typeContainer.innerHTML = divInnerHTML;
-
+    
 
     searchPokemon = data.id;
   } else {
     pokemonImage.style.display = 'none';
-    pokemonName.innerHTML = 'Not found';
-    pokemonNumber.innerHTML = '';
+    pokemonName.textContent = 'Not found';
+    pokemonNumber.textContent = '';
   }
   input.value = '';
 }
@@ -97,25 +99,16 @@ form.addEventListener('submit', (event) => {
   renderPokemon(input.value.toLowerCase());
 });
 
-buttonPrev.addEventListener('click', () => {
-  if (searchPokemon > 1) {
-    searchPokemon -= 1;
-    renderPokemon(searchPokemon);
-    
-    
-  }
-});
-
-
-buttonNext.addEventListener('click', () => {
-  searchPokemon += 1;
-  renderPokemon(searchPokemon);
-
-});
-
 renderPokemon(searchPokemon);
 
-
+buttonPrev.onclick = () => {
+  var audio = new Audio("soundfile.wav");
+  audio.play();
+  if (searchPokemon > 1){
+    searchPokemon -= 1;
+    renderPokemon(searchPokemon);
+  }
+}
 
 buttonNext.onclick = function() {
   var audio = new Audio("next-button-sound.wav");
@@ -125,6 +118,8 @@ buttonNext.onclick = function() {
 buttonPrev.onclick = function() {
   var audio = new Audio("mixkit-modern-technology-select-3124.wav");
   audio.play();
+  searchPokemon += 1;
+  renderPokemon(searchPokemon);
 }
 
 
