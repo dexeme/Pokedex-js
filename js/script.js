@@ -69,7 +69,7 @@ const renderPokemon = async (pokemon) => {
         dragon: 'https://cdn.discordapp.com/attachments/905594842619469854/1006520957848010762/ghost.png',
         dark: 'https://cdn.discordapp.com/attachments/905594842619469854/1006522402114654218/ghost.png',
         bug: 'https://cdn.discordapp.com/attachments/905594842619469854/1006523209694322738/ghost.png',
-        fight: 'https://cdn.discordapp.com/attachments/905594842619469854/1006523633914626088/ghost.png',
+        fighting: 'https://cdn.discordapp.com/attachments/905594842619469854/1006523633914626088/ghost.png',
         ground: 'https://cdn.discordapp.com/attachments/905594842619469854/1006524320815775865/ghost.png',
         ice: 'https://cdn.discordapp.com/attachments/905594842619469854/1006524559899492422/ghost.png',
         normal: 'https://cdn.discordapp.com/attachments/905594842619469854/1006525048573661236/ghost.png',
@@ -92,6 +92,7 @@ const renderPokemon = async (pokemon) => {
     pokemonNumber.textContent = '';
   }
   input.value = '';
+
 }
 
 form.addEventListener('submit', (event) => {
@@ -101,21 +102,29 @@ form.addEventListener('submit', (event) => {
 
 renderPokemon(searchPokemon);
 
-buttonPrev.onclick = () => {
-  var audio = new Audio("soundfile.wav");
+
+buttonPrev.onclick = function() {
+  var audio = new Audio("mixkit-modern-technology-select-3124.wav");
+  audio.play();
+}
+
+buttonPrev.onclick = function() {
+  var audio = new Audio("mixkit-modern-technology-select-3124.wav");
   audio.play();
   if (searchPokemon > 1){
     searchPokemon -= 1;
     renderPokemon(searchPokemon);
   }
-}
+
+
+  }
 
 buttonNext.onclick = function() {
-  var audio = new Audio("next-button-sound.wav");
+  var audio = new Audio("mixkit-mixkit-modern-technology-select-3124.wav-bubble-click-1124.wav");
   audio.play();
 }
 
-buttonPrev.onclick = function() {
+buttonNext.onclick = function() {
   var audio = new Audio("mixkit-modern-technology-select-3124.wav");
   audio.play();
   searchPokemon += 1;
