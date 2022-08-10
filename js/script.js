@@ -13,27 +13,12 @@ const typeContainer = document.querySelector('#types');
 
 
 let Shiny = 'front_default';
-
 let searchPokemon = 1;
-
-
-function button_shiny() {
-  if (Shiny=='front_shiny'){
-    Shiny='front_default'
-
-
-  } else{Shiny='front_shiny'}
-  //document.getElementById('button_shiny')
-  renderPokemon(searchPokemon);
-  }
 
 
 const fetchPokemon = async (pokemon) => {
   const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-
-
-
-
+  
   if (APIResponse.status === 200) {
     const data = await APIResponse.json();
     return data;
@@ -41,14 +26,13 @@ const fetchPokemon = async (pokemon) => {
 }
 
 const renderPokemon = async (pokemon) => {
-
+  
   pokemonName.textContent = 'Loading...';
   pokemonNumber.textContent = '';
-
+  
   const data = await fetchPokemon(pokemon);
-
-
-
+  
+  
   if (data) {
     pokemonImage.style.display = 'block';
     pokemonName.textContent = data.name;
@@ -82,17 +66,30 @@ const renderPokemon = async (pokemon) => {
       img.classList.add('type_image');
       img.src = imageUrl;
       typeContainer.appendChild(img);
+
     });
     
-
+    
     searchPokemon = data.id;
+    document.getElementById("buttonShiny").disabled = false;  
+    
   } else {
     pokemonImage.style.display = 'none';
     pokemonName.textContent = 'Not found';
     pokemonNumber.textContent = '';
+    typeContainer.innerHTML = ''
+
+    
+    var audio = new Audio("mixkit-metal-hammer-hit-833.wav");
+    audio.play();
+    audio.volume = 0.2;
+    searchPokemon = 0; 
+    document.getElementById("buttonShiny").disabled = true; 
+    
   }
   input.value = '';
-
+  
+  
 }
 
 form.addEventListener('submit', (event) => {
@@ -103,32 +100,38 @@ form.addEventListener('submit', (event) => {
 renderPokemon(searchPokemon);
 
 
-buttonPrev.onclick = function() {
-  var audio = new Audio("mixkit-modern-technology-select-3124.wav");
-  audio.play();
-}
+
+
+
 
 buttonPrev.onclick = function() {
-  var audio = new Audio("mixkit-modern-technology-select-3124.wav");
+  var audio = new Audio("mixkit-mouse-click-close-1113.wav");
   audio.play();
+  audio.volume = 0.2;
   if (searchPokemon > 1){
     searchPokemon -= 1;
     renderPokemon(searchPokemon);
   }
-
-
-  }
-
-buttonNext.onclick = function() {
-  var audio = new Audio("mixkit-mixkit-modern-technology-select-3124.wav-bubble-click-1124.wav");
-  audio.play();
 }
-
 buttonNext.onclick = function() {
   var audio = new Audio("mixkit-modern-technology-select-3124.wav");
   audio.play();
+  audio.volume = 0.2;
   searchPokemon += 1;
   renderPokemon(searchPokemon);
 }
+
+buttonShiny.onclick = function() {
+  var audio = new Audio("mixkit-cooking-bell-ding-1791.wav");
+  audio.play();
+  audio.volume = 0.2;
+  if (Shiny=='front_shiny'){
+  Shiny='front_default'
+  } else{Shiny='front_shiny'}
+  renderPokemon(searchPokemon);
+  }
+
+
+
 
 

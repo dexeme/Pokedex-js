@@ -12,6 +12,7 @@
     Corrigir erros:
 
     1 // Quando Not Found -> Limpar barra de pesquisa ao invés de manter o Input (RESOLVIDO)
-    2 // Pokémon 602 maior que o normal 
-    3 // Quando pokémon só tem 1 tipo, não aparece centralizado
-    4 // Quanto Not Found -> Limpar tipos
+    2 // Pokémon 602 maior que o normal ()
+    3 // Quando pokémon só tem 1 tipo, não aparece centralizado (RESOLVIDO)
+    4 // Quando Not Found -> Limpar tipos (RESOLVIDO)
+    5 // Quando Not found -> Ao clicar no botão shiny, toca 2 sons, quando era pra estar bloqueado (RESOLVIDO)
