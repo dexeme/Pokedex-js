@@ -37,16 +37,17 @@
 
     <div id="types"></div>
 
+  <!-- Links 
     <div class="buttons">
       <button class="button btn-prev">Prev &lt;</button>
       <button id="buttonShiny" onclick="buttonShiny()" class="button btn-shiny">Shiny &lowast;</button>
-      <button class="button btn-next">Next &gt;</button>
+      <button class="button btn-next">Next &gt;</button>-->
 
 
       
     </div>
 
-    <img src="./images/pokedex.png" alt="pokedex" class="pokedex">
+    <img src="./images/pokedex.png" alt="pokedex" class="pokedex" id="pokedex">
   </main>
 
 </body>
@@ -56,38 +57,18 @@
 
   <!-- SHINY BUTTON -->
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.class1{ float:left; margin:10px; background:#09C; width:100px; height:100px; cursor:pointer; }
-.class2{ float:left; margin:10px; background:#0C0; width:100px; height:100px; cursor:pointer; }
-</style>
-<script>
-function toggleClass(pokemon){
-	var kids = document.getElementById('menu1').children;
-	for(var i = 0; i < kids.length; i++){
-        kids[i].className = "class1";
-    }
-    pokemon.className = "class2";
-}
-</script>
-</head>
-<body>
-<div id="menu1">
-  <div class="class2" onclick="toggleClass(this)"></div>
-  <div class="class1" onclick="toggleClass(this)"></div>
-  <div class="class1" onclick="toggleClass(this)"></div>
-  <div class="class1" onclick="toggleClass(this)"></div>
+<div class="buttons">
+  <nav class="d-pad">
+    <a class="up" href="#"></a>
+    <a class="right" href="#"></a>
+    <a class="down" href="#"></a>
+    <a class="left" href="#"></a>
+  </nav>
+  <nav class="o-pad">
+    <a class="up" href="#"></a>
+    <a class="right" href="#"></a>
+    <a class="down" href="#"></a>
+    <a class="left" href="#"></a>
+  </nav>
 </div>
-</body>
-</html>
-
-
-<!doctype html>
-<html>
-  <head>
-    <title>Audio</title>
-  </head>
-  <body>
 

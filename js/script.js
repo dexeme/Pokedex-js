@@ -2,7 +2,7 @@ const pokemonName = document.querySelector('.pokemon__name');
 const pokemonNumber = document.querySelector('.pokemon__number');
 const pokemonImage = document.querySelector('.pokemon__image');
 const pokemonType = document.querySelector('.pokemon__type');
-
+const pokedex = document.querySelector('#pokedex');
 
 const form = document.querySelector('.form');
 
@@ -34,6 +34,7 @@ const renderPokemon = async (pokemon) => {
   
   
   if (data) {
+    pokedex.src = "./images/pokedex.png";
     pokemonImage.style.display = 'block';
     pokemonName.textContent = data.name;
     pokemonNumber.textContent = data.id;
@@ -74,10 +75,13 @@ const renderPokemon = async (pokemon) => {
     document.getElementById("buttonShiny").disabled = false;  
     
   } else {
+    pokedex.src = "./images/pokedexERROR.png";
     pokemonImage.style.display = 'none';
     pokemonName.textContent = 'Not found';
     pokemonNumber.textContent = '';
     typeContainer.innerHTML = ''
+
+
 
     
     var audio = new Audio("mixkit-metal-hammer-hit-833.wav");
@@ -121,6 +125,8 @@ buttonNext.onclick = function() {
   renderPokemon(searchPokemon);
 }
 
+
+
 buttonShiny.onclick = function() {
   var audio = new Audio("mixkit-cooking-bell-ding-1791.wav");
   audio.play();
@@ -135,3 +141,47 @@ buttonShiny.onclick = function() {
 
 
 
+//LIXOOOOOOOOOOOOOOOOOO
+
+// Prevent scrolling on every click!
+
+// super sweet vanilla JS delegated event handling!
+document.body.addEventListener("click", function (e) {
+  if (e.target && e.target.nodeName == "A") {
+    e.preventDefault();
+  }
+});
+let dpads = Array.prototype.slice.call(
+    document.getElementsByClassName("d-pad"),
+    0
+  ),
+  opads = Array.prototype.slice.call(
+    document.getElementsByClassName("o-pad"),
+    0
+  ),
+  els = dpads.concat(opads);
+function dir(dir) {
+  for (let i = 0; i < els.length; i++) {
+    const el = els[i],
+      d = el.className.indexOf("d-") !== -1,
+      what = d ? "d-pad" : "o-pad";
+    console.log(what);
+    el.className = what + " " + dir;
+  }
+}
+document.body.onkeyup = function (e) {
+  switch (e.which) {
+    case 37:
+      dir("left");
+      break;
+    case 39:
+      dir("right");
+      break;
+    case 38:
+      dir("up");
+      break;
+    case 40:
+      dir("down");
+      break;
+  }
+};
