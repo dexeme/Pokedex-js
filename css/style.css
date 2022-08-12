@@ -10,23 +10,18 @@
 
 body {
     text-align: center;
-    background: linear-gradient(to bottom, #c04cae,#fff);
-    min-height: 100vh;
+    background: linear-gradient(to bottom, #115b83,#fff);
+    min-height: 90%;
+    background-repeat: no-repeat;
 }
 
 
 main {
     display: inline-block;
     margin-top: 2%;
-    padding: 15px;
     position: relative;
 }
 
-.pokedex {
-    width: 100%;
-    max-width: 425;
-
-}
 
 .pokemon__image {
     position: absolute;
@@ -36,9 +31,25 @@ main {
     width: 50%;
     height: 17%;
     object-fit: contain;
-
+    
+}
+.pokedex {
+    width: 100%;
+    max-width: 425;
+    margin: 0;
+    padding: 0;
+    
 }
 
+.pokedexInfo {
+    width: 90%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 99%;
+    bottom:7%;
+    object-fit: contain;
+}
 .pokemon__data {
     position: absolute;
     font-weight: 600;
@@ -140,11 +151,9 @@ main {
     width: 22%;
     height: 65%;
     transform: translate(3%, 0);
-    display: flex;
     display: flex; 
     object-position: 5% 5%
 }
-
 .set {
     overflow: hidden;
     padding: 10px;
@@ -184,7 +193,6 @@ main {
     transition: all 0.25s;
     cursor: pointer;
   }
-
   .d-pad a {
     position: absolute;
     width: 36.3%;
