@@ -99,36 +99,25 @@ main {
 #types {
     position: absolute;
     align-items: center;
-    bottom: 5%;
-    left: -70%;
+    bottom: 55%;
+    padding: 0%;
+    left: -37%;
     width: 90%;
-    transform: scale(0.3,0.3);
-    flex-direction: column;
-    gap: 105px;
-    justify-content: center;
+    transform: scale(0.32);
+    gap: 0px;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
     
     
 };
 
 .type_image {
     position: relative;
-    display: flex; 
+    display: flex;
     object-position: 50% 50%
     
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .buttonsINVISIVEL{
     position: absolute;
@@ -140,22 +129,9 @@ main {
     gap: 20px;
 }
 
-
-
-
-
-
-
-
 .d-pad {
     position: absolute;
 }
-
-
-
-
-
-
 
 .buttons {
     position: absolute;
