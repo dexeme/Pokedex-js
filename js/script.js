@@ -3,7 +3,7 @@ const pokemonNumber = document.querySelector('.pokemon__number');
 const pokemonImage = document.querySelector('.pokemon__image');
 const pokemonType = document.querySelector('.pokemon__type');
 const pokedex = document.querySelector('#pokedex');
-const pokedexInfo = document.querySelector('#pokedexInfo');
+const pokedexInfo = document.querySelector('#pokedexInfoPokemon');
 
 
 const form = document.querySelector('.form');
@@ -24,7 +24,7 @@ let Shiny = 'front_default';
 let searchPokemon = 1;
 
 pokedexInfo.style.display = 'none';
-
+typeContainer.style.display = 'none';
 
 const fetchPokemon = async (pokemon) => {
   const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -51,7 +51,7 @@ const renderPokemon = async (pokemon) => {
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated'][Shiny];
     typeContainer.innerHTML = '';
     input.value = '';
-
+    
     data['types'].forEach((item, index) => {
       tipo = item['type']['name'];        
       let imageUrls = {
@@ -80,7 +80,8 @@ const renderPokemon = async (pokemon) => {
       img.src = imageUrl;
       
       typeContainer.appendChild(img);
-
+      
+      
     });
     
     
@@ -92,15 +93,13 @@ const renderPokemon = async (pokemon) => {
     pokemonImage.style.display = 'none';
     pokemonName.textContent = 'Not found';
     pokemonNumber.textContent = '';
-    pokedexInfo.style.display = 'none';
-
     input.value = '';
     typeContainer.innerHTML = ''
     
     
     
     
-    var audio = new Audio("mixkit-metal-hammer-hit-833.wav");
+    var audio = new Audio("./sounds/error.wav");
     audio.play();
     audio.volume = 0.2;
     
@@ -120,7 +119,7 @@ form.addEventListener('submit', (event) => {
 renderPokemon(searchPokemon);
 
 buttonPrev.onclick = function() {
-  var audio = new Audio("mixkit-mouse-click-close-1113.wav");
+  var audio = new Audio("./sounds/buttonPrev.wav");
   audio.play();
   audio.volume = 0.2;
   if (searchPokemon > 1){
@@ -129,7 +128,7 @@ buttonPrev.onclick = function() {
   }
 }
 buttonNext.onclick = function() {
-  var audio = new Audio("mixkit-modern-technology-select-3124.wav");
+  var audio = new Audio("./sounds/buttonNext.wav");
   audio.play();
   audio.volume = 0.2;
   searchPokemon += 1;
@@ -137,7 +136,7 @@ buttonNext.onclick = function() {
 }
 
 buttonShiny.onclick = function() {
-  var audio = new Audio("mixkit-cooking-bell-ding-1791.wav");
+  var audio = new Audio("./sounds/buttonShiny.wav");
   audio.play();
   audio.volume = 0.2;
   if (Shiny=='front_shiny'){
@@ -148,12 +147,15 @@ buttonShiny.onclick = function() {
   }
 
   buttonInfo.onclick = function() {
-    pokedexInfo.src = "./images/pokedexInfo.gif";
+    pokedexInfo.src = "./images/pokedexInfoPokemon.png";
     if (pokedexInfo.style.display == 'none'){
-    pokedexInfo.src = "./images/pokedexInfo.gif";  
+    pokedexInfo.src = "./images/pokedexInfoPokemon.png";  
     pokedexInfo.style.display = 'inherit';
+    typeContainer.style.display = 'inherit';
     } else{
-    pokedexInfo.src = "./images/pokedexInfoReverso.gif";
-    setTimeout (function(){pokedexInfo.style.display = 'none';}, 700); 
+    pokedexInfo.src = "./images/pokedexInfoPokemon.png";
+    pokedexInfo.style.display = 'none';
+    typeContainer.style.display = 'none';
     }
   }
+
