@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700&display=swap');
 
 
 *{
     margin: 0;
     padding: 0;
+    color: rgb(243, 243, 243);
     box-sizing: border-box;
+    font-size: 1.16em;
     font-family: 'Oxanium', cursive;
+    font-feature-settings: 'tnum';
 }
 
 body {
     text-align: center;
-    background: linear-gradient(to bottom, #115b83,#fff);
+    background: linear-gradient(to bottom, #47b9db,#fff);
     min-height: 90%;
     background-repeat: no-repeat;
 }
@@ -22,6 +25,13 @@ main {
     position: relative;
 }
 
+
+.pokemon__number {
+
+    color: #3c454c
+
+
+}
 
 .pokemon__image {
     position: absolute;
@@ -41,14 +51,26 @@ main {
     
 }
 
-.pokedexInfo {
-    width: 90%;
-    padding: 0;
+.star {
+    position: absolute;
+    transform: scale(0.03,0.03);
+    display: flex;
+    justify-content: center;
+    left: -30%;
+    top: -50%;
+    opacity: 95%;
+
+}
+.pokedexInfoPokemon {
+    width: 95%;
+    padding: 0.7%;
     margin: 0;
     position: absolute;
-    left: 99%;
-    bottom:7%;
+    left: 98%;
+    bottom: 5%;
     object-fit: contain;
+    z-index: -1;
+
 }
 .pokemon__data {
     position: absolute;
@@ -58,15 +80,12 @@ main {
     right: 27%;
     font-size: clamp(8px, 5vw, 25px);
 }
-
-
 .pokemon__name {
     color: #3a444d;
     text-transform: capitalize;
     
 
 }
-
 .form {
     position: absolute;
     width: 65%;
@@ -74,8 +93,6 @@ main {
     left: 13.5%
 
 }
-
-
 .input__search {
     width: 100%;
     padding: 4%;
@@ -86,10 +103,11 @@ main {
     color: #3a444d;
     font-size: clamp(8px, 5vw, 1rem);
     box-shadow: -3px 4px 0 #888, -5px 6px 0 #333
-
 }
 
-
+.stats {
+    position: absolute;
+}
 .button {
     width: 50%;
     padding: 4%;
@@ -102,33 +120,34 @@ main {
     box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
 }
 
-.up:active {
-    box-shadow: inset -4px 4px 0 rgb(12, 12, 12);
-    font-size: 0.9rem;
-}
+#stats {
+    position: absolute;
+    float: right;
+    flex-direction: column;
+    gap: 30%;
+    top: 34.2%;
+    left: 161%;
+    Text-align: left;
 
+
+} 
 #types {
     position: absolute;
-    align-items: center;
-    bottom: 55%;
-    padding: 0%;
-    left: -37%;
-    width: 90%;
-    transform: scale(0.32);
-    gap: 0px;
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-    
-    
-};
-
-.type_image {
-    position: relative;
     display: flex;
+    justify-content: left;
+    bottom: 49%;
+    left: 235%;
+    gap: 350%;
+    width: 90%;
+    transform: scale(0.3,0.3);
+    z-index: 0;
+}
+.type_image { 
+    position: relative;
+    display: flex; 
+    z-index: 1000;
     object-position: 50% 50%
-    
-};
+}
 
 .buttonsINVISIVEL{
     position: absolute;
@@ -139,11 +158,9 @@ main {
     display: flex;
     gap: 20px;
 }
-
 .d-pad {
     position: absolute;
 }
-
 .buttons {
     position: absolute;
     bottom: -40%;
@@ -198,8 +215,8 @@ main {
     width: 36.3%;
     height: 43%;
     line-height: 40%;
-    color: rgb(255, 255, 255);
-    background: #000;
+    color: rgb(214, 11, 11);
+    background: rgb(25, 25, 27);
     display: flex;
     justify-content: center;
     text-align: center;
@@ -254,7 +271,7 @@ main {
 }
 /*Tamanho da seta da Esquerda */
 .d-pad a.left:before {
-    left: 40%;
+    left: 30%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-width: 10px 16px 10px 0;
@@ -262,13 +279,12 @@ main {
 }
 /*Tamanho da seta da Direita */
 .d-pad a.right:before {
-  right: 25%;
+  right: 30%;
   top: 50%;
   transform: translate(50%, -50%);
   border-width: 10px 0 10px 16px;
   border-color: transparent transparent transparent #000;
 }
-
 
 /*POSIÇÃO PARTE DE BAIXO*/
 .d-pad a.down {
@@ -279,7 +295,8 @@ main {
 }
 /*Sombra seta de Baixo */
 .d-pad a.down:hover {
-    background: linear-gradient(180deg, #000 0%, #000 50%);
+    box-shadow: inset -4px 4px 0 rgb(25, 25, 27);
+    font-size: 0.9rem;
 }
 /*Inútil*/
 .d-pad a.down:after {
@@ -314,7 +331,8 @@ main {
     border-radius: 17% 50% 50% 17%;
 }
 .d-pad a.left:hover {
-    background: linear-gradient(-90deg, #000 0%, #000 50%);
+    box-shadow: inset -4px 4px 0 rgb(25, 25, 27);
+    font-size: 0.9rem;
 }
 .d-pad a.left:after {
     left: 0;
@@ -341,9 +359,6 @@ main {
     border-top-right-radius: 50%;
     pointer-events: none;
 }
-    
-
-
 /*Não mexer*/
 .d-pad a.right:hover:before {
     right: 35%;
@@ -366,7 +381,8 @@ main {
 }
 /*Não mexer*/
 .d-pad a.right:hover {
-    background: linear-gradient(90deg, #000 0%, #000 50%);
+    box-shadow: inset -4px 4px 0 rgb(25, 25, 27);
+    font-size: 0.9rem;
 }
 /*Não mexer*/
 .d-pad a.down:hover:before {
