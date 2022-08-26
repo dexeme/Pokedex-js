@@ -111,6 +111,7 @@ const renderPokemon = async (pokemon) => {
     pokemonName.textContent = 'Not found';
     pokemonNumber.textContent = '';
     input.value = '';
+    star.style.display = 'none';
     typeContainer.innerHTML = ''
     
     
