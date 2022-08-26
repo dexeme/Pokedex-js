@@ -106,7 +106,7 @@ const renderPokemon = async (pokemon) => {
     document.getElementById('#up').disabled = false;  
     
   } else {
-    pokedex.src = "./images/pokedexError.png";
+    pokedex.src = "./images/pokedexERROR.png";
     pokemonImage.style.display = 'none';
     pokemonName.textContent = 'Not found';
     pokemonNumber.textContent = '';
